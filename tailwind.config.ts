@@ -8,6 +8,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
+      backgroundImage: {
+        'hero-image': "url('/images/hero-background.png')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

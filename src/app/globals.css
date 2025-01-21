@@ -18,4 +18,9 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  @apply overflow-x-hidden
+}
+
+.text-shadow-sky {
+  text-shadow: 0 0 9px #38bdf8;
 }
