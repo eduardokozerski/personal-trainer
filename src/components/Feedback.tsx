@@ -12,15 +12,16 @@ type CarouselProps = {
 
 export const Feedback = ({ images }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Usar breakpoint md (768px)
+  const [isMobile, setIsMobile] = useState(false); // Evita erro no SSR
 
-  // Atualizar isMobile ao redimensionar a janela
+  // Atualizar isMobile ao redimensionar a janela (só no cliente)
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      const checkScreenSize = () => setIsMobile(window.innerWidth < 768);
+      checkScreenSize(); // Verifica o tamanho inicial
+      window.addEventListener("resize", checkScreenSize);
+      return () => window.removeEventListener("resize", checkScreenSize);
+    }
   }, []);
 
   if (!images || images.length === 0) {
@@ -91,9 +92,7 @@ export const Feedback = ({ images }: CarouselProps) => {
             .slice(currentIndex, currentIndex + visibleImages)
             .map((image, index) => (
               <FadeInUpAnimation key={index}>
-                <div
-                  className="h-auto w-72 lg:w-96 bg-darkBlue border-2 border-sky-800 rounded-lg shadow-md flex flex-col items-center justify-between overflow-hidden"
-                >
+                <div className="h-auto w-72 lg:w-96 bg-darkBlue border-2 border-sky-800 rounded-lg shadow-md flex flex-col items-center justify-between overflow-hidden">
                   {/* Imagem na parte superior */}
                   <div className="mt-4 w-full flex items-center justify-center bg-darkBlue">
                     <img
