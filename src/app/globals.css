@@ -21,6 +21,117 @@ body {
   @apply overflow-x-hidden
 }
 
-.text-shadow-sky {
-  text-shadow: 0 0 9px #38bdf8;
+/* TEXT EFFECT */
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 0px #38bdf8;
+  }
+  50% {
+    text-shadow: 0 0 9px #38bdf8;
+  }
+}
+
+.glow-text {
+  font-weight: 700;
+  font-size: 1em;
+  color: #38bdf8;
+  animation: glow 2s infinite;
+}
+
+
+
+/* HERO BUTTON */
+@keyframes button-glow {
+  0% {
+    box-shadow: 0 0 8px #38bdf8; /* Glow inicial */
+  }
+  100% {
+    box-shadow: 0 0 8px #38bdf8; /* Mantém o brilho contínuo */
+  }
+}
+
+@keyframes border-shimmer {
+  0% {
+    border-color: #38bdf8; /* Azul padrão */
+  }
+  50% {
+    border-color: #7dd3fc; /* Azul mais claro */
+  }
+  100% {
+    border-color: #38bdf8; /* Azul padrão */
+  }
+}
+
+.btn-glow {
+  position: relative;
+  background-color: #000;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  transition: transform 0.3s ease-in-out, border-color 0.3s;
+  overflow: hidden;
+}
+
+.btn-glow:hover {
+  animation: button-glow 2s infinite;
+  transform: scale(1.1);
+  background-color: #002130;
+  border-color: #38bdf8;
+}
+
+.btn-glow:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  animation: border-shimmer 2s infinite;
+  z-index: -1;
+}
+
+/* SOCIAL MEDIA BUTTONS EFFECT */
+@keyframes social-glow {
+  0% {
+    box-shadow: 0 0 8px #38bdf8; /* Glow inicial */
+  }
+  100% {
+    box-shadow: 0 0 8px #38bdf8; /* Mantém o brilho contínuo */
+  }
+}
+
+@keyframes social-shimmer {
+  0% {
+    border-color: #38bdf8; /* Azul padrão */
+  }
+  50% {
+    border-color: #7dd3fc; /* Azul mais claro */
+  }
+  100% {
+    border-color: #38bdf8; /* Azul padrão */
+  }
+}
+
+.socialBtn-glow {
+  position: relative;
+  color: white;
+  transition: transform 0.3s ease-in-out, border-color 0.3s;
+  overflow: hidden;
+}
+
+.socialBtn-glow:hover {
+  animation: social-glow 2s infinite;
+  transform: scale(1.1);
+  border-color: #38bdf8;
+}
+
+.socialBtn-glow:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  animation: social-shimmer 2s infinite;
+  z-index: -1;
 }
