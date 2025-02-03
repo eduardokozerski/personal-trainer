@@ -29,7 +29,7 @@ const WhatsAppIcon = () => {
   );
 };
 
-export const Page = () => {
+export default function Page() {
   return (
     <div>
       <Hero />
@@ -39,9 +39,7 @@ export const Page = () => {
       <Testimonials />
       <Plans />
       <FAQ />
-      <WhatsAppIcon /> {/* Ícone do WhatsApp adicionado aqui */}
+      <WhatsAppIcon />
     </div>
   );
 };
-
-export default Page;
