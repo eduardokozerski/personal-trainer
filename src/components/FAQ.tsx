@@ -45,7 +45,7 @@ export const FAQ = () => {
     ];
 
     return (
-        <div className="relative bg-cover bg-center"
+        <div className="relative bg-black bg-cover bg-center"
             style={{ backgroundImage: "url('/images/faq-background.png')" }}>
             <FadeInUpAnimation>
                 <div className="flex flex-col justify-center items-center">

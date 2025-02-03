@@ -46,7 +46,7 @@ export const Feedback = ({ images }: CarouselProps) => {
   };
 
   return (
-    <div className="mb-32 relative w-full flex flex-col items-center">
+    <div className="mb-32 relative w-full flex flex-col items-center bg-black">
       {/* Título com animação */}
       <FadeInUpAnimation>
         <div className="text-center">

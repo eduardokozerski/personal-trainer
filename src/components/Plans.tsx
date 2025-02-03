@@ -6,7 +6,7 @@ export const Plans = () => {
     return (
         <FadeInUpAnimation>
             <div id="plans" 
-            className="mb-32 flex flex-col items-center relative bg-cover bg-center md:bg-contain md:bg-right bg-no-repeat "
+            className="mb-32 flex flex-col items-center relative bg-black bg-cover bg-center md:bg-contain md:bg-right bg-no-repeat "
             style={{
                 backgroundImage: "url('/images/plans-background.png')",
             }}

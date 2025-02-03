@@ -3,7 +3,7 @@ import { FadeInAnimation } from "@/components/FadeInAnimation";
 export const Hero = () => {
     return (
       <div className="w-full mb-26">
-        <div className="bg-hero-image bg-cover bg-center relative overflow-hidden">
+        <div className="bg-hero-image bg-black bg-cover bg-center relative overflow-hidden">
           <FadeInAnimation>
           <div className="flex justify-center h-14 md:h-16 lg:h-16 mt-12 mb-10">
             <img

@@ -4,7 +4,7 @@ export const HelpYou = () => {
 
     return (
         <FadeInUpAnimation>
-            <div className="mb-32 flex flex-col md:flex justify-center items-center">
+            <div className="mb-32 flex flex-col md:flex justify-center items-center bg-black">
                 <div className=" max-w-full">
                     <h1 className="text-3xl md:text-4xl font-bold relative">
                         COMO VOU TE AJUDAR
