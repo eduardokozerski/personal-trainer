@@ -38,7 +38,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-black">
       <Hero />
       <AboutMe />
       <HelpYou />
