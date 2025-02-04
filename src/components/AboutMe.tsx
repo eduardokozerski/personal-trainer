@@ -4,7 +4,7 @@ import { FadeInUpAnimation } from "./FadeInUpAnimation";
 export const AboutMe = () => {
   return (
     <div
-      className="mb-32 mt-16 md:mt-16 xl:mt-0 relative bg-cover bg-center md:bg-contain md:bg-no-repeat md:bg-left-bottom px-6 md:px-12"
+      className="mb-32 mt-16 md:mt-16 xl:mt-0 relative bg-black bg-cover bg-center md:bg-contain md:bg-no-repeat md:bg-left-bottom px-6 md:px-12"
       style={{
         backgroundImage: "url('/images/aboutme-background.png')",
       }}
