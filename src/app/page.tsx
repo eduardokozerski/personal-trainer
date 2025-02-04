@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Plans } from "@/components/Plans";
 import { FAQ } from "@/components/FAQ";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const WhatsAppIcon = () => {
   return (
@@ -24,22 +24,29 @@ const WhatsAppIcon = () => {
         alt="WhatsApp"
         width={50}
         height={50}
+        priority
       />
     </a>
   );
 };
 
 export default function Page() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div>
       <Hero />
       <AboutMe />
       <HelpYou />
-      <Feedback images={images} />
+      {isClient && <Feedback images={images} />}
       <Testimonials />
       <Plans />
       <FAQ />
       <WhatsAppIcon />
     </div>
   );
-};
+}
